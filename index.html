@@ -2,31 +2,41 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>معلومات النتيجة</title>
+  <title>نتيجة الطالب</title>
   <style>
     body {
       font-family: "Tahoma", sans-serif;
-      background-color: #f5f5f5;
-      text-align: center;
-      direction: rtl;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
     }
-    .container {
-      background-color: white;
-      margin: 30px auto;
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .info {
-      text-align: right;
-      margin-bottom: 20px;
-      font-size: 16px;
-      line-height: 1.8;
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin: 10px;
+      padding: 20px;
+      width: 350px;
     }
-    .info b {
-      color: #000;
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #333;
+    }
+    .info-item {
+      margin: 10px 0;
+      font-size: 15px;
+    }
+    .info-item b {
+      color: #222;
     }
     table {
       width: 100%;
@@ -35,59 +45,91 @@
     }
     th, td {
       padding: 10px;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #eee;
+      text-align: center;
     }
     th {
+      background-color: #f0f0f0;
       color: #333;
     }
-    td {
-      font-weight: bold;
-    }
     .fail {
-      background-color: #ffe5e5;
+      background-color: #ffe5e5 !important;
     }
     .note {
-      margin-top: 15px;
-      font-size: 14px;
+      font-size: 13px;
       color: #666;
+      margin-top: 10px;
+      text-align: center;
     }
-    .note b {
-      color: #000;
+    .result {
+      padding: 8px;
+      border-radius: 6px;
+      color: white;
+      width: fit-content;
+      margin: 10px auto 0;
+      font-weight: bold;
+    }
+    .success {
+      background-color: #28a745;
+    }
+    .fail-result {
+      background-color: #dc3545;
+    }
+    .download-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #198754;
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-top: 15px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>معلومات النتيجة</h2>
+  <div class="wrapper">
+
     
-    <div class="info">
-      <div><b>اسم الطالب:</b> رضا علاء حسين علي</div>
-      <div><b>المدرسة:</b> إعدادية الرافدين للبنين</div>
-      <div><b>المرحلة الدراسية:</b> الثالث المتوسط</div>
-      <div><b>المحافظة:</b> بغداد</div>
-      <div><b>المجموع:</b> 675</div>
-      <div><b>المعدل:</b> 96.4</div>
-      <div><b>النتيجة:</b> ناجح</div>
+    <div class="card">
+      <h3>جمهورية العراق - وزارة التربية</h3>
+      <div class="info-item"><b>الاسم الرباعي:</b> رضا رضا رضا رضا</div>
+      <div class="info-item"><b>اسم المدرسة:</b> ثانوية حمورابي للبنين</div>
+      <div class="info-item"><b>المرحلة الدراسية:</b> الثالث المتوسط</div>
+      <div class="info-item"><b>الفرع:</b> متوسط</div>
+      <div class="info-item"><b>المجموع:</b> 675</div>
+      <div class="info-item"><b>المعدل:</b> 96.4%</div>
+      <div class="info-item"><b>النتيجة النهائية:</b> 
+        <div class="result success">ناجح</div>
+      </div>
+      <button class="download-btn">تحميل النتيجة</button>
     </div>
 
-    <table>
-      <tr>
-        <th>الدرجة</th>
-        <th>المادة</th>
-      </tr>
-      <tr><td>95</td><td>الاسلامية/العربية</td></tr>
-      <tr><td>97</td><td>الانكليزية</td></tr>
-      <tr><td>99</td><td>الرياضيات</td></tr>
-      <tr><td>96</td><td>الاجتماعيات</td></tr>
-      <tr><td>92</td><td>الأحياء</td></tr>
-      <tr><td>100</td><td>الكيمياء</td></tr>
-      <tr><td>94</td><td>الفيزياء</td></tr>
-    </table>
-
-    <div class="note">
-      <b>ملاحظة:</b> هذه النتيجة لا تُعد وثيقة رسمية، ويجب الاعتماد على الوثائق الورقية الصادرة من الوزارة.
+  
+    <div class="card">
+      <h3>معلومات النتيجة</h3>
+      <table>
+        <tr>
+          <th>المادة</th>
+          <th>الدرجة</th>
+        </tr>
+        <tr><td>الإسلامية/العربية</td><td>95</td></tr>
+        <tr><td>الإنكليزية</td><td>97</td></tr>
+        <tr><td>الرياضيات</td><td>99</td></tr>
+        <tr><td>الاجتماعيات</td><td>96</td></tr>
+        <tr><td>الأحياء</td><td>92</td></tr>
+        <tr><td>الكيمياء</td><td>100</td></tr>
+        <tr><td>الفيزياء</td><td>94</td></tr>
+      </table>
+      <div class="note">
+        <b>ملاحظة:</b> هذه النتيجة لا تُعد وثيقة رسمية ويجب الاعتماد على الوثائق الورقية الصادرة من الوزارة.
+      </div>
     </div>
+
   </div>
 
 </body>
